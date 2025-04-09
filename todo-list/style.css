@@ -42,7 +42,12 @@ input:focus {
     width: 400px;
 }
 
-#todoList p {
+#finishTodoList {
+    width: 400px;
+}
+
+#todoList p,
+#finishTodoList p {
     background-color: #dddcdc;
     text-indent: 18px;
     height: 40px;
@@ -53,11 +58,13 @@ input:focus {
     text-indent: 20px;
 }
 
-#todoList p span {
+#todoList p span,
+#finishTodoList p span {
     margin-left: 10px;
 }
 
-#todoList p button,
+.editBtn,
+.deleteBtn,
 .okBtn {
     background-color: #a5bff0;
     border: none;
