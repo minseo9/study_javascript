@@ -37,7 +37,7 @@ body {
 }
 
 .week #Sunday {
-    color: red;
+    color: #ff0000;
 }
 
 .date {
@@ -64,10 +64,27 @@ body {
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    color: white;
+    color: #ffffff;
     font-weight: bold;
 }
 
-.date div:nth-child(7n + 1) {
-    color: red;
+.currDate div:nth-child(7n + 1) {
+    color: #ff0000;
+}
+
+.prevDate,
+.nextDate {
+    color: #808080;
+}
+
+.selectDate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e9d789;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    color: #ffffff;
+    font-weight: bold;
 }
