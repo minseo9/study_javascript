@@ -1,0 +1,55 @@
+.calculator {
+    width: 300px;
+    height: 400px;
+    background-color: #5c5dad;
+    border-radius: 20px;
+    flex-direction: column;
+    padding-top: 25px;
+}
+
+.input {
+    width: 270px;
+    height: 60px;
+    background-color: #858585;
+    border-radius: 20px;
+    margin-left: 15px;
+}
+
+.buttonView {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 10px;
+    width: 280px;
+    margin-top: 25px;
+    margin-left: 20px;
+}
+
+.button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-style: none;
+    font-size: 1rem;
+}
+
+.operation {
+    background-color: #f5c262;
+}
+
+.number {
+    background-color: #858585;
+}
+
+.result {
+    grid-row: span 3;
+    width: 50px;
+    border-radius: 30px;
+    border-style: none;
+}
+
+.zero {
+    grid-column: span 2;
+    width: 90%;
+    border-radius: 30px;
+    border-style: none;
+}
