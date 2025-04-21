@@ -31,11 +31,6 @@ function drawCalender() {
     let currentYear = date.getFullYear();
     let currentMonth = date.getMonth() + 1;
 
-    console.log(year);
-    console.log(currentYear);
-    console.log(month);
-    console.log(currentMonth);
-
     let prevLastDate = new Date(year, month, 0); // 이전달 마지막 날짜
     let currLastDate = new Date(year, month + 1, 0); // 지금달 마지막 날짜
 
