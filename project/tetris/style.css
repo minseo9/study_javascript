@@ -1,0 +1,26 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.tetris-container {
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+.next-container {
+    position: absolute;
+    top: 20px;
+    left: 400px;
+}
+
+#next {
+    display: block;
+}
+
+.score-container {
+    position: absolute;
+    top: 215px;
+    left: 400px;
+}
