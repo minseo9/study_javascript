@@ -83,75 +83,63 @@ function changePlayer() {
 
 // 승리 조건 체크
 // 가로, 세로, 대각선 (5칸씩)
-let count = 0;
 function winCheck(drawRow, drawCol) {
-    // 가로
-    for (let i = drawCol - 4; i <= drawCol + 4; i++) {
-        if (i < 0 || i >= playBlock[drawRow].length) continue;
+    const checkType = [
+        [0, 1],
+        [1, 0],
+        [1, 1],
+        [1, -1],
+    ];
 
-        if (playBlock[drawRow][i] === player) {
-            count++;
+    checkType.forEach(([x, y]) => {
+        let count = 1;
 
-            if (count === 5) {
-                console.log(`${player} 승리`);
-                canvas.removeEventListener("click", drawOmok);
+        for (let i = 1; i <= 4; i++) {
+            const moveX = drawRow - x * i;
+            const moveY = drawCol - y * i;
+
+            if (
+                moveX < 0 ||
+                moveX >= playBlock.length ||
+                moveY < 0 ||
+                moveY >= playBlock[drawRow].length
+            )
+                break;
+
+            if (playBlock[moveX][moveY] === player) {
+                count++;
+                console.log(`${player}`, count);
+            } else {
                 break;
             }
-        } else {
-            count = 0;
         }
-    }
 
-    // 세로
-    for (let i = drawRow - 4; i <= drawRow + 4; i++) {
-        if (i < 0 || i >= playBlock[drawRow].length) continue;
-        if (playBlock[i][drawCol] === player) {
-            count++;
+        for (let i = 1; i <= 4; i++) {
+            const moveX = drawRow + x * i;
+            const moveY = drawCol + y * i;
 
-            if (count === 5) {
-                console.log(`${player} 승리`);
-                canvas.removeEventListener("click", drawOmok);
+            if (
+                moveX < 0 ||
+                moveX >= playBlock.length ||
+                moveY < 0 ||
+                moveY >= playBlock[drawRow].length
+            )
+                break;
+
+            if (playBlock[moveX][moveY] === player) {
+                count++;
+                console.log(`${player}`, count);
+            } else {
                 break;
             }
-        } else {
-            count = 0;
         }
-    }
 
-    // 대각선
-    let leftCheck = drawCol - 4;
-    for (let i = drawRow - 4; i <= drawRow + 4; i++) {
-        if (i < 0 || i >= playBlock[drawRow].length) continue;
-        if (playBlock[i][leftCheck] === player) {
-            count++;
-            leftCheck++;
-
-            if (count === 5) {
-                console.log(`${player} 승리`);
-                canvas.removeEventListener("click", drawOmok);
-                break;
-            }
-        } else {
-            count = 0;
+        if (count === 5) {
+            console.log(`${player} 승리`);
+            canvas.removeEventListener("click", drawOmok);
+            return;
         }
-    }
-
-    let rightCheck = drawCol + 4;
-    for (let i = drawRow - 4; i <= drawRow + 4; i++) {
-        if (i < 0 || i >= playBlock[drawRow].length) continue;
-        if (playBlock[i][rightCheck] === player) {
-            count++;
-            rightCheck--;
-
-            if (count === 5) {
-                console.log(`${player} 승리`);
-                canvas.removeEventListener("click", drawOmok);
-                break;
-            }
-        } else {
-            count = 0;
-        }
-    }
+    });
 
     changePlayer();
 }
