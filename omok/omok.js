@@ -140,7 +140,6 @@ function winCheck(drawRow, drawCol) {
             return;
         }
     });
-
     changePlayer();
 }
 
