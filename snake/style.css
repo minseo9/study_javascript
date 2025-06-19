@@ -1,0 +1,19 @@
+.game-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.canvas-section {
+    display: flex;
+}
+
+.score-view {
+    margin-left: 10px;
+    width: 60px;
+}
+
+.info-section {
+    margin-top: 7px;
+}
